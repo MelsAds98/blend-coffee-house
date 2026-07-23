@@ -1,0 +1,744 @@
+/* ===== 1. Design-Variablen ===== */
+:root {
+  --farbe-gruen: #768045;
+  --farbe-gruen-dunkel: #59602F;
+  --farbe-creme: #F7F3EA;
+  --farbe-weiss: #FFFFFF;
+  --farbe-text: #2A2925;
+  --farbe-text-leise: #6E6B62;
+  --farbe-linie: #E5DFD3;
+
+  --schrift-titel: "Fraunces", serif;
+  --schrift-text: "Inter", sans-serif;
+
+  --abstand-s: 8px;
+  --abstand-m: 16px;
+  --abstand-l: 32px;
+  --abstand-xl: 64px;
+}
+
+/* ===== 2. Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== 3. Grundlagen ===== */
+body {
+  background-color: var(--farbe-creme);
+  color: var(--farbe-text);
+  font-family: var(--schrift-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--schrift-titel);
+  line-height: 1.2;
+}
+/* ===== 4. Layout-Helfer ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--abstand-m);
+  padding-right: var(--abstand-m);
+}
+
+/* ===== 5. Navigation ===== */
+.site-header {
+  background-color: var(--farbe-creme);
+  border-bottom: 1px solid var(--farbe-linie);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--abstand-m);
+  padding-bottom: var(--abstand-m);
+}
+
+.logo {
+  font-family: var(--schrift-titel);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--farbe-text);
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: var(--abstand-l);
+  list-style: none;
+}
+
+.nav-list a {
+  color: var(--farbe-text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-list a:hover {
+  color: var(--farbe-gruen);
+}
+
+.nav-list a:focus-visible,
+.logo:focus-visible {
+  outline: 2px solid var(--farbe-gruen);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+/* ===== 6. Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 14px 38px;
+  border-radius: 100px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--farbe-gruen);
+  color: var(--farbe-weiss);
+}
+
+.btn-primary:hover {
+  background-color: var(--farbe-gruen-dunkel);
+}
+
+.btn-secondary {
+  color: var(--farbe-gruen);
+  border: 2px solid var(--farbe-gruen);
+}
+
+.btn-secondary:hover {
+  background-color: var(--farbe-gruen);
+  color: var(--farbe-weiss);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--farbe-gruen-dunkel);
+  outline-offset: 4px;
+}
+
+/* ===== 7. Hero ===== */
+.hero {
+  padding-top: var(--abstand-xl);
+  padding-bottom: var(--abstand-xl);
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-xl);
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.eyebrow {
+  color: var(--farbe-gruen);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-bottom: var(--abstand-m);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: var(--abstand-m);
+}
+
+.hero-text {
+  color: var(--farbe-text-leise);
+  font-size: 1.2rem;
+  margin-bottom: var(--abstand-l);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--abstand-m);
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+.logo-img {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+/* ===== 8. Sektionen allgemein ===== */
+.section {
+  padding-top: var(--abstand-xl);
+  padding-bottom: var(--abstand-xl);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--abstand-xl);
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: var(--abstand-s);
+}
+
+.section-intro {
+  color: var(--farbe-text-leise);
+  font-size: 1.1rem;
+}
+/* Sektion mit weißem Hintergrund (abwechselnd) */
+.section--weiss {
+  background-color: var(--farbe-weiss);
+}
+
+/* ===== 9. Karten-Raster ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--abstand-l);
+}
+
+.card {
+  background-color: var(--farbe-weiss);
+  border: 1px solid var(--farbe-linie);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: var(--abstand-m);
+}
+
+.card-title {
+  font-family: var(--schrift-titel);
+  font-size: 1.2rem;
+  margin-bottom: var(--abstand-s);
+}
+
+.card-text {
+  color: var(--farbe-text-leise);
+  margin-bottom: var(--abstand-s);
+}
+
+.card-price {
+  color: var(--farbe-gruen);
+  font-weight: 600;
+}
+/* ===== 10. Speisekarte – Karussell ===== */
+.menu-row {
+  margin-bottom: var(--abstand-xl);
+}
+
+.menu-row-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--abstand-l);
+}
+
+.menu-row-title {
+  font-size: 1.6rem;
+}
+
+.menu-row-note {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--farbe-gruen);
+}
+
+.menu-arrows {
+  display: flex;
+  gap: var(--abstand-s);
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--farbe-gruen);
+  background-color: var(--farbe-weiss);
+  color: var(--farbe-gruen);
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.arrow:hover {
+  background-color: var(--farbe-gruen);
+  color: var(--farbe-weiss);
+}
+
+.arrow:focus-visible {
+  outline: 2px solid var(--farbe-gruen-dunkel);
+  outline-offset: 3px;
+}
+
+/* Die Schiene: horizontal scrollbar */
+.menu-track {
+  display: flex;
+  gap: var(--abstand-l);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 12px 4px 24px 4px;
+  scrollbar-width: none;
+}
+
+.menu-track::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-card {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+}
+
+/* ===== 11. Hover-Effekt für alle Karten ===== */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(118, 128, 69, 0.18);
+}
+
+/* ===== 12. Sektions-Kopf: linksbündige Variante ===== */
+.section-header--left {
+  text-align: left;
+  max-width: 640px;
+  margin-left: 0;
+}
+
+/* ===== 13. Ambiente – Mosaik-Galerie ===== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: var(--abstand-m);
+}
+
+.gallery-item {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Größen-Varianten */
+.gallery-item--big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item--wide {
+  grid-column: span 2;
+}
+
+/* ===== 14. Standort ===== */
+.standort-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--abstand-xl);
+  align-items: center;
+}
+
+.standort-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--abstand-l);
+}
+
+.info-title {
+  font-size: 1.1rem;
+  margin-bottom: var(--abstand-s);
+  color: var(--farbe-gruen);
+}
+
+.info-text {
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.info-block .btn {
+  margin-top: var(--abstand-m);
+}
+
+.info-text a {
+  color: var(--farbe-text);
+  text-decoration: underline;
+}
+
+.info-text a:hover {
+  color: var(--farbe-gruen);
+}
+
+/* Karte */
+.standort-map {
+  min-height: 420px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--farbe-linie);
+}
+
+.map-placeholder {
+  height: 100%;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--abstand-m);
+  text-align: center;
+  padding: var(--abstand-l);
+  background-color: var(--farbe-weiss);
+}
+
+.map-hinweis {
+  color: var(--farbe-text-leise);
+  max-width: 320px;
+}
+
+.standort-map iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+}
+
+/* ===== 15. Footer ===== */
+.site-footer {
+  background-color: var(--farbe-text);
+  color: var(--farbe-creme);
+  margin-top: var(--abstand-xl);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--abstand-l);
+  flex-wrap: wrap;
+  padding-top: var(--abstand-xl);
+  padding-bottom: var(--abstand-l);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--abstand-m);
+}
+
+.footer-tagline {
+  font-family: var(--schrift-titel);
+  font-size: 1.1rem;
+}
+
+.footer-nav,
+.footer-social {
+  display: flex;
+  gap: var(--abstand-l);
+}
+
+.site-footer a {
+  color: var(--farbe-creme);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: var(--farbe-gruen);
+}
+
+.site-footer a:focus-visible {
+  outline: 2px solid var(--farbe-creme);
+  outline-offset: 3px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(247, 243, 234, 0.15);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--abstand-m);
+  flex-wrap: wrap;
+  padding-top: var(--abstand-m);
+  padding-bottom: var(--abstand-m);
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: var(--abstand-m);
+}
+
+/* ===== 18. Burger-Button (auf Desktop versteckt) ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle-bar {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--farbe-text);
+  border-radius: 2px;
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--farbe-gruen);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ===== 19. Bewertungen ===== */
+.rating-box {
+  max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: var(--farbe-weiss);
+  border: 1px solid var(--farbe-linie);
+  border-radius: 16px;
+  padding: var(--abstand-xl) var(--abstand-l);
+}
+
+.rating-score {
+  font-family: var(--schrift-titel);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--farbe-gruen);
+}
+
+.rating-stars {
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+  color: #E3A008;
+  margin-top: var(--abstand-s);
+}
+
+.rating-count {
+  color: var(--farbe-text-leise);
+  margin-top: var(--abstand-s);
+  margin-bottom: var(--abstand-l);
+}
+
+/* ===== 20. Speisekarte – Text-Karten (ohne Bild) ===== */
+.menu-card--text {
+  border-top: 4px solid var(--farbe-gruen);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card--text .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--abstand-l) var(--abstand-m);
+}
+
+.menu-card--text .card-text {
+  margin-bottom: var(--abstand-l);
+}
+
+.menu-card--text .card-price {
+  margin-top: auto;
+  padding-top: var(--abstand-m);
+  border-top: 1px solid var(--farbe-linie);
+  font-size: 1.1rem;
+}
+
+/* ===== 21. Rechtsseiten (Impressum, Datenschutz) ===== */
+.legal {
+  max-width: 720px;
+}
+
+.legal h1 {
+  font-size: 2.4rem;
+  margin-bottom: var(--abstand-l);
+}
+
+.legal h2 {
+  font-family: var(--schrift-titel);
+  font-size: 1.4rem;
+  margin-top: var(--abstand-xl);
+  margin-bottom: var(--abstand-m);
+}
+
+.legal h3 {
+  font-size: 1.1rem;
+  margin-top: var(--abstand-l);
+  margin-bottom: var(--abstand-s);
+}
+
+.legal p,
+.legal ul {
+  margin-bottom: var(--abstand-m);
+}
+
+.legal ul {
+  padding-left: var(--abstand-l);
+}
+
+.legal a {
+  color: var(--farbe-gruen);
+}
+
+/* ===== 16. Responsive: Tablet & Handy (bis 768px) ===== */
+@media (max-width: 768px) {
+
+  /* Hero: kleinere Überschrift, weniger Abstand */
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero {
+    padding-top: var(--abstand-l);
+    padding-bottom: var(--abstand-l);
+  }
+
+  /* Hero: Text und Bild untereinander stapeln */
+  .hero-inner {
+    flex-direction: column;
+    gap: var(--abstand-l);
+  }
+
+  .hero-content,
+  .hero-image {
+    width: 100%;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-img {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Hero-Buttons: gestapelt und gleich breit */
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Standort: Infos und Karte untereinander */
+  .standort-inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ambiente-Galerie: von 4 auf 2 Spalten */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Sektionen: etwas weniger Abstand oben/unten */
+  .section {
+    padding-top: var(--abstand-l);
+    padding-bottom: var(--abstand-l);
+  }
+  /* Burger-Button sichtbar machen */
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Menü standardmäßig verstecken */
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: var(--farbe-creme);
+    border-bottom: 1px solid var(--farbe-linie);
+    padding: var(--abstand-m);
+  }
+
+  /* Menü zeigen, wenn geöffnet */
+  .nav-list.is-open {
+    display: flex;
+  }
+
+  .nav-list li {
+    padding: var(--abstand-s) 0;
+  }
+
+  /* Navigation als Bezugspunkt für das absolute Menü */
+  .nav {
+    position: relative;
+  }
+}
+
+/* ===== 17. Responsive: kleines Handy (bis 480px) ===== */
+@media (max-width: 480px) {
+
+  /* Standort-Infos: auch die 2 Spalten stapeln */
+  .standort-info {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ambiente: das große Bild nicht mehr doppelt breit,
+     damit auf sehr kleinen Handys nichts winzig wird */
+  .gallery-item--big {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
