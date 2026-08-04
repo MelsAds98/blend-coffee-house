@@ -1,19 +1,21 @@
-/* ===== 0. Schriften (lokal eingebunden – DSGVO-freundlich) ===== */
+/* ===== Lokale Schriftarten ===== */
+
 @font-face {
   font-family: "Fraunces";
-  src: url("../assets/fonts/fraunces.woff2") format("woff2");
-  font-weight: 400 600;
+  src: url("../assets/fonts/fraunces.ttf") format("truetype");
   font-style: normal;
+  font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("../assets/fonts/inter.woff2") format("woff2");
-  font-weight: 400 600;
+  src: url("../assets/fonts/inter.ttf") format("truetype");
   font-style: normal;
+  font-weight: 100 900;
   font-display: swap;
 }
+
 
 /* ===== 1. Design-Variablen ===== */
 :root {
