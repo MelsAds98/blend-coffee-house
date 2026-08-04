@@ -153,8 +153,9 @@ h1, h2, h3 {
 }
 
 .hero-inner {
-    flex-direction: column;
-    gap: 40px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
 }
 
 .hero-content {
@@ -171,8 +172,11 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-    font-size: 2.6rem;
-    line-height: 1.15;
+  font-size: 3.4rem;
+  line-height: 1.08;
+  font-weight: 600;
+  max-width: 600px;
+  margin-bottom: 16px;
 }
 
 .hero-text {
@@ -535,8 +539,17 @@ h1, h2, h3 {
 }
 
 /* ===== 18. Burger-Button (auf Desktop versteckt) ===== */
-.nav-toggle{
-    position:relative;
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 30px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
 .nav-toggle-bar{
