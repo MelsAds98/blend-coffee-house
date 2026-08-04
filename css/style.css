@@ -1,18 +1,18 @@
-/* ===== Lokale Schriftarten ===== */
+/* ===== 0. Schriften lokal eingebunden ===== */
 
 @font-face {
   font-family: "Fraunces";
   src: url("../assets/fonts/fraunces.ttf") format("truetype");
-  font-style: normal;
   font-weight: 100 900;
+  font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/inter.ttf") format("truetype");
-  font-style: normal;
   font-weight: 100 900;
+  font-style: normal;
   font-display: swap;
 }
 
