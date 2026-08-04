@@ -48,9 +48,11 @@ const navList = document.querySelector("#nav-list");
 
 if (navToggle && navList) {
   navToggle.addEventListener("click", function () {
+    // Button-Animation UND das Menü umschalten
+    navToggle.classList.toggle("is-active");
     navList.classList.toggle("is-open");
 
-    // Barrierefreiheit: Zustand mitteilen
+    // Barrierefreiheit: Zustand NACH dem Umschalten auslesen
     const isOpen = navList.classList.contains("is-open");
     navToggle.setAttribute("aria-expanded", isOpen);
     navToggle.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
@@ -60,6 +62,7 @@ if (navToggle && navList) {
   const navLinks = navList.querySelectorAll("a");
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
+      navToggle.classList.remove("is-active");
       navList.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-label", "Menü öffnen");
